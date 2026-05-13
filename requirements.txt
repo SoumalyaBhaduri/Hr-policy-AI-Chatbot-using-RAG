@@ -3,3 +3,5 @@ langchain_community
 chromadb
 pypdf
 python-dotenv
+unstructured[pdf]
+langchain-text-splitters
