@@ -5,3 +5,5 @@ pypdf
 python-dotenv
 unstructured[pdf]
 langchain-text-splitters
+uvicorn
+fastapi

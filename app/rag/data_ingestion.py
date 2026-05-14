@@ -22,9 +22,19 @@ def data_ingest():
       chunk_overlap=50
    )
 
-   chunks=chunking.split_text(document)
+   chunks=chunking.split_documents(document)
 
-   print(chunks)
+   embed = HuggingFaceEmbeddings(model_name= "sentence-transformers/all-MiniLM-L6-v2")
+
+   #vector database
+
+   vectordb = Chroma(
+      collection_name="rag_data",
+      embedding_function=embed,
+      persist_directory=str(chroma_path)
+   )
+
+   vectordb.add_documents(documents=chunks)
 
 
 
