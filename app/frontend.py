@@ -18,7 +18,7 @@ if uploaded_file is not None:
     if st.button("Add to KnowledgeBase"):
         with st.spinner("Ingesting PDF into the knowledge base..."):
             try:
-                response = requests.get("http://127.0.0.1:8000/data", timeout=120)
+                response = requests.get("http://api:8000/data")
                 if response.ok:
                     st.success("Knowledge base updated successfully.")
                 else:
@@ -37,7 +37,7 @@ if question:
 
     payload = {"question": question}
     try:
-        resp = requests.post("http://127.0.0.1:8000/chat", json=payload, timeout=30)
+        resp = requests.post("http://api:8000/chat", json=payload, timeout=30)
         if resp.ok:
             answer = resp.json().get("answer", "No answer returned.")
             st.session_state.session_plan.append({"role": "assistant", "content": answer})

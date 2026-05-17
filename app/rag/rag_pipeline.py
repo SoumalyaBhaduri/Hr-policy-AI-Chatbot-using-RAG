@@ -23,6 +23,7 @@ def ask_question(question: str):
 
     prompt = f"""You are an AI assistant responding to question.
     Use prior conversation memory to keep continuity.
+    only provide resposne to the question.
     Previous conversation:
     {memory_context or 'None'}
     Context:

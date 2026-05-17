@@ -1,6 +1,6 @@
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
 from pathlib import Path
@@ -14,17 +14,17 @@ data_path = os.path.join(BASE_DIR, "data")
 
 def data_ingest():
    #load data
-   loader = DirectoryLoader(data_path)
+   loader = PyPDFDirectoryLoader(data_path)
    document = loader.load()
    #chunking
    chunking = RecursiveCharacterTextSplitter(
-      chunk_size=500,
-      chunk_overlap=50
+      chunk_size=1000,
+      chunk_overlap=200
    )
 
    chunks=chunking.split_documents(document)
 
-   embed = HuggingFaceEmbeddings(model_name= "sentence-transformers/all-MiniLM-L6-v2")
+   embed = HuggingFaceBgeEmbeddings(model_name="BAAI/bge-large-en-v1.5")
 
    #vector database
 

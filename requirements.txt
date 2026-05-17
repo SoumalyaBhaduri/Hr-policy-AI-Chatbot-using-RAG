@@ -3,7 +3,12 @@ langchain_community
 chromadb
 pypdf
 python-dotenv
-unstructured[pdf]
 langchain-text-splitters
 uvicorn
 fastapi
+streamlit
+datasets
+ragas
+langchain_groq
+sentence_transformers
+datasets
