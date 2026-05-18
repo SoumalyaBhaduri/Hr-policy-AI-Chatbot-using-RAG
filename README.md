@@ -1,6 +1,12 @@
 # Enterprise RAG PDF Chatbot
 
+# Demo Video
+
 [![Watch the video](https://img.youtube.com/vi/ML1wXG_MR3g/0.jpg)](https://youtu.be/ML1wXG_MR3g)
+
+# Code structure video
+
+[![Watch the video](https://img.youtube.com/vi/K5nX2tDJRJ8/0.jpg)](https://youtu.be/K5nX2tDJRJ8)
 
 A production-style Retrieval-Augmented Generation (RAG) chatbot built using Groq, LangChain, FastAPI, Streamlit, Docker, and FAISS.
 
