@@ -109,7 +109,25 @@ text http://localhost:8000/docs
 
 ## Project Structure
 
-text Pdf_Chatbot/ │ ├── app/ │   ├── rag/ │   ├── frontend.py │   ├── main.py │ ├── data/ ├── vectorstore/ ├── eval.py ├── requirements.txt ├── Dockerfile.api ├── Dockerfile.streamlit ├── docker-compose.yml └── .env 
+Pdf_Chatbot/
+│
+├── app/
+│   ├── rag/
+│       ├── chat.py
+│       ├── data_ingestion.py
+│       ├── rag_pipeline.py
+│       ├── retriever.py
+│   ├── frontend.py
+│   ├── main.py
+│
+├── data/
+├── vectorstore/
+├── eval.py
+├── requirements.txt
+├── Dockerfile.api
+├── Dockerfile.streamlit
+├── docker-compose.yml
+└── .env
 
 ---
 
